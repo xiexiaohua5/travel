@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.travel.mapper.GroupBuildingTourismMapper">
+  <resultMap id="BaseResultMap" type="com.qf.travel.entity.GroupBuildingTourism">
+    <!--@mbg.generated-->
+    <!--@Table group_building_tourism-->
+    <id column="group_id" jdbcType="BIGINT" property="groupId" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="attractions" jdbcType="VARCHAR" property="attractions" />
+    <result column="route" jdbcType="VARCHAR" property="route" />
+    <result column="expiry_time" jdbcType="TIMESTAMP" property="expiryTime" />
+    <result column="price" jdbcType="FLOAT" property="price" />
+    <result column="preview" jdbcType="VARCHAR" property="preview" />
+    <result column="update_people" jdbcType="VARCHAR" property="updatePeople" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="sort_label" jdbcType="VARCHAR" property="sortLabel" />
+    <result column="grade" jdbcType="FLOAT" property="grade" />
+    <result column="click" jdbcType="BIGINT" property="click" />
+    <result column="destination" jdbcType="VARCHAR" property="destination" />
+    <result column="departure_place" jdbcType="VARCHAR" property="departurePlace" />
+    <result column="theme" jdbcType="VARCHAR" property="theme" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    group_id, `state`, `type`, attractions, route, expiry_time, price, preview, update_people, 
+    update_time, sort_label, grade, click, destination, departure_place, theme
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from group_building_tourism
+    where group_id = #{groupId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from group_building_tourism
+    where group_id = #{groupId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.qf.travel.entity.GroupBuildingTourism">
+    <!--@mbg.generated-->
+    insert into group_building_tourism (group_id, `state`, `type`, 
+      attractions, route, expiry_time, 
+      price, preview, update_people, 
+      update_time, sort_label, grade, 
+      click, destination, departure_place, 
+      theme)
+    values (#{groupId,jdbcType=BIGINT}, #{state,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+      #{attractions,jdbcType=VARCHAR}, #{route,jdbcType=VARCHAR}, #{expiryTime,jdbcType=TIMESTAMP}, 
+      #{price,jdbcType=FLOAT}, #{preview,jdbcType=VARCHAR}, #{updatePeople,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{sortLabel,jdbcType=VARCHAR}, #{grade,jdbcType=FLOAT}, 
+      #{click,jdbcType=BIGINT}, #{destination,jdbcType=VARCHAR}, #{departurePlace,jdbcType=VARCHAR}, 
+      #{theme,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.travel.entity.GroupBuildingTourism">
+    <!--@mbg.generated-->
+    insert into group_building_tourism
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="attractions != null">
+        attractions,
+      </if>
+      <if test="route != null">
+        route,
+      </if>
+      <if test="expiryTime != null">
+        expiry_time,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="preview != null">
+        preview,
+      </if>
+      <if test="updatePeople != null">
+        update_people,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="sortLabel != null">
+        sort_label,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+      <if test="click != null">
+        click,
+      </if>
+      <if test="destination != null">
+        destination,
+      </if>
+      <if test="departurePlace != null">
+        departure_place,
+      </if>
+      <if test="theme != null">
+        theme,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        #{groupId,jdbcType=BIGINT},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="attractions != null">
+        #{attractions,jdbcType=VARCHAR},
+      </if>
+      <if test="route != null">
+        #{route,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryTime != null">
+        #{expiryTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=FLOAT},
+      </if>
+      <if test="preview != null">
+        #{preview,jdbcType=VARCHAR},
+      </if>
+      <if test="updatePeople != null">
+        #{updatePeople,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortLabel != null">
+        #{sortLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=FLOAT},
+      </if>
+      <if test="click != null">
+        #{click,jdbcType=BIGINT},
+      </if>
+      <if test="destination != null">
+        #{destination,jdbcType=VARCHAR},
+      </if>
+      <if test="departurePlace != null">
+        #{departurePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="theme != null">
+        #{theme,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.travel.entity.GroupBuildingTourism">
+    <!--@mbg.generated-->
+    update group_building_tourism
+    <set>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="attractions != null">
+        attractions = #{attractions,jdbcType=VARCHAR},
+      </if>
+      <if test="route != null">
+        route = #{route,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryTime != null">
+        expiry_time = #{expiryTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=FLOAT},
+      </if>
+      <if test="preview != null">
+        preview = #{preview,jdbcType=VARCHAR},
+      </if>
+      <if test="updatePeople != null">
+        update_people = #{updatePeople,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortLabel != null">
+        sort_label = #{sortLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=FLOAT},
+      </if>
+      <if test="click != null">
+        click = #{click,jdbcType=BIGINT},
+      </if>
+      <if test="destination != null">
+        destination = #{destination,jdbcType=VARCHAR},
+      </if>
+      <if test="departurePlace != null">
+        departure_place = #{departurePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="theme != null">
+        theme = #{theme,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where group_id = #{groupId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.travel.entity.GroupBuildingTourism">
+    <!--@mbg.generated-->
+    update group_building_tourism
+    set `state` = #{state,jdbcType=INTEGER},
+      `type` = #{type,jdbcType=VARCHAR},
+      attractions = #{attractions,jdbcType=VARCHAR},
+      route = #{route,jdbcType=VARCHAR},
+      expiry_time = #{expiryTime,jdbcType=TIMESTAMP},
+      price = #{price,jdbcType=FLOAT},
+      preview = #{preview,jdbcType=VARCHAR},
+      update_people = #{updatePeople,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      sort_label = #{sortLabel,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=FLOAT},
+      click = #{click,jdbcType=BIGINT},
+      destination = #{destination,jdbcType=VARCHAR},
+      departure_place = #{departurePlace,jdbcType=VARCHAR},
+      theme = #{theme,jdbcType=VARCHAR}
+    where group_id = #{groupId,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectByParams" resultMap="BaseResultMap">
+    select group_id, state, type, attractions, route, expiry_time, price, preview, update_people, update_time, sort_label, grade, click
+    from group_building_tourism
+    <trim prefix="where" prefixOverrides="OR|AND">
+      <if test="gbt.state != null and gbt.state != ''">
+        state = #{gbt.state}
+      </if>
+      <if test="gbt.type != null and gbt.type != ''">
+        or type = #{gbt.type}
+      </if>
+      <if test="gbt.destination != null and gbt.destination != ''">
+        or destination = #{gbt.destination}
+      </if>
+      <if test="gbt.departurePlace != null and gbt.departurePlace != ''">
+        or departure_place = #{gbt.departurePlace}
+      </if>
+      <if test="gbt.theme != null and gbt.theme != ''">
+        or theme = #{gbt.theme}
+      </if>
+      <if test="gbt.groupId != null and gbt.groupId != ''">
+        or group_id = #{gbt.groupId}
+      </if>
+      <if test="gbt.updatePeople != null and gbt.updatePeople != ''">
+        or update_people = #{gbt.updatePeople}
+      </if>
+      <if test="gbt.sortLabel != null and gbt.sortLabel != ''">
+        or sort_label like concat('%',#{gbt.sortLabel},'%')
+      </if>
+      <if test="gbt.route != null and gbt.route != ''">
+        or route like concat('%',#{gbt.route},'%')
+      </if>
+      <if test="gbt.attractions != null and gbt.attractions != ''">
+        or attractions like concat('%',#{gbt.attractions},'%')
+      </if>
+      <if test="gbt.price != null and gbt.price != ''">
+        or price like concat('%',#{gbt.price},'%')
+      </if>
+    </trim>
+  </select>
+
+  <select id="selectTypeNum" resultMap="BaseResultMap">
+    select type,count(*) num from group_building_tourism
+    group by type
+  </select>
+
+</mapper>
