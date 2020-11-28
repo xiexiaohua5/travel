@@ -283,11 +283,6 @@
         </trim>
     </select>
 
-    <select id="selectTypeNum" resultMap="BaseResultMap">
-        select type, count(*) num
-        from group_building_tourism
-        group by type
-    </select>
     <update id="updateTypeById">
         update group_building_tourism
         set type = #{type}
@@ -295,8 +290,29 @@
     </update>
 
     <select id="selectById" resultMap="BaseResultMap">
-      select group_id, state, type, attractions, route, expiry_time, price, preview, update_people, update_time, sort_label, grade, click, destination, departure_place, theme
-      from group_building_tourism
-      where group_id = #{id}
+        select group_id,
+               state,
+               type,
+               attractions,
+               route,
+               expiry_time,
+               price,
+               preview,
+               update_people,
+               update_time,
+               sort_label,
+               grade,
+               click,
+               destination,
+               departure_place,
+               theme
+        from group_building_tourism
+        where group_id = #{id}
+    </select>
+
+    <select id="selectTypeNum" resultType="int">
+        select count(*)
+        from group_building_tourism
+        where type = #{type}
     </select>
 </mapper>

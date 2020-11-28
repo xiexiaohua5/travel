@@ -84,9 +84,4 @@ public class GroupBuildingTourism {
     * 主题
     */
     private String theme;
-
-    /**
-     * 展示的数量
-     */
-    private Integer num;
 }

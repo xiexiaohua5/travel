@@ -1,7 +1,7 @@
 package com.qf.travel.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.qf.travel.commons.po.GroupBuildingTourismPo;
+import com.qf.travel.commons.dto.GroupBuildingTourismDto;
 import com.qf.travel.commons.result.BaseResultEntity;
 import com.qf.travel.commons.vo.GroupBuildingTourismVo;
 import com.qf.travel.service.GroupBuildingTourismService;
@@ -21,8 +21,8 @@ public class GroupBuildingTourismController {
      * @return
      */
     @PostMapping("/select")
-    public BaseResultEntity<PageInfo<GroupBuildingTourismVo>> selectTravel(@RequestBody GroupBuildingTourismPo gbtPo){
-        BaseResultEntity<PageInfo<GroupBuildingTourismVo>> entity = gbtService.selectGroup(gbtPo);
+    public BaseResultEntity<PageInfo<GroupBuildingTourismVo>> selectTravel(@RequestBody GroupBuildingTourismDto gtbDto){
+        BaseResultEntity<PageInfo<GroupBuildingTourismVo>> entity = gbtService.selectGroup(gtbDto);
         return entity;
     }
 

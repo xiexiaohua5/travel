@@ -1,5 +1,6 @@
 package com.qf.travel.mapper;
 
+import com.qf.travel.commons.po.GroupBuildingTourismPo;
 import com.qf.travel.entity.GroupBuildingTourism;
 import org.apache.ibatis.annotations.Param;
 
@@ -30,7 +31,7 @@ public interface GroupBuildingTourismMapper {
      *
      * @return
      */
-    List<GroupBuildingTourism> selectTypeNum();
+    int selectTypeNum(@Param("type") String type);
 
     /**
      * 根据id修改状态
