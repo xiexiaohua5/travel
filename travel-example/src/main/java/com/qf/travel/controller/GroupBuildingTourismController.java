@@ -17,7 +17,7 @@ public class GroupBuildingTourismController {
     GroupBuildingTourismService gbtService;
 
     /**
-     * 根据传进来的参数进行查询，出来的结果有每种状态的条数
+     * 根据传进来的参数进行查询
      * @return
      */
     @PostMapping("/select")
@@ -33,6 +33,17 @@ public class GroupBuildingTourismController {
     @GetMapping("/type")
     public BaseResultEntity<List<GroupBuildingTourismVo>> selectTypeNum(){
         BaseResultEntity<List<GroupBuildingTourismVo>> entity = gbtService.selectTypeNum();
+        return entity;
+    }
+
+    /**
+     * 根据id修改团建表的状态
+     * @param id
+     * @return
+     */
+    @GetMapping("/update")
+    public BaseResultEntity<Integer> updateType(@RequestParam long id, @RequestParam String type){
+        BaseResultEntity<Integer> entity = gbtService.updateType(id, type);
         return entity;
     }
 }

@@ -11,4 +11,6 @@ public interface GroupBuildingTourismService {
     BaseResultEntity<PageInfo<GroupBuildingTourismVo>> selectGroup(GroupBuildingTourismPo gbtp);
 
     BaseResultEntity<List<GroupBuildingTourismVo>> selectTypeNum();
+
+    public BaseResultEntity<Integer> updateType(long id, String type);
 }

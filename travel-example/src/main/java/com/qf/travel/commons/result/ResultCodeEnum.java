@@ -65,7 +65,7 @@ public enum ResultCodeEnum {
     /*接口地址无效*/
     NO_FOUND_ERROR(50004, "no found error", "接口地址无效"),
     /* 数据错误 */
-    DATA_IS_WRONG(60001, "data is wrong", "数据错误");;
+    DATA_IS_WRONG(60001, "data is wrong", "数据错误");
     /**
      * 返回码,为什么访问修饰符使用的是protected
      */

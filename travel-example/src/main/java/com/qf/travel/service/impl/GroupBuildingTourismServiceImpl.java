@@ -68,4 +68,23 @@ public class GroupBuildingTourismServiceImpl implements GroupBuildingTourismServ
         return success;
     }
 
+    public BaseResultEntity<Integer> updateType(long id, String type){
+        GroupBuildingTourism selectById = null;
+        BaseResultEntity<Integer> success = null;
+        try {
+            //先判断商品是否存在，不存在则提示错误信息
+            selectById = gbtMapper.selectById(id);
+            if (selectById != null){
+                //修改商品的状态
+                int i = gbtMapper.updateTypeById(id, type);
+                if (i > 0){
+                    success = BaseResultEntity.success(i);
+                }
+            }
+        } catch (Exception e) {
+            throw new ServiceException(ResultCodeEnum.ERROR);
+        }
+        return success;
+    }
+
 }

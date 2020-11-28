@@ -31,4 +31,18 @@ public interface GroupBuildingTourismMapper {
      * @return
      */
     List<GroupBuildingTourism> selectTypeNum();
+
+    /**
+     * 根据id修改状态
+     * @param id
+     * @return
+     */
+    int updateTypeById(@Param("id") Long id, @Param("type") String type);
+
+    /**
+     * 通过id找到记录
+     * @param id
+     * @return
+     */
+    GroupBuildingTourism selectById(@Param("id") Long id);
 }
